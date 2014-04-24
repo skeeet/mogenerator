@@ -42,8 +42,8 @@ extern const struct <$managedObjectClassName$>UserInfo {<$foreach UserInfo userI
 @end
 
 @interface _<$managedObjectClassName$> : <$customSuperentity$> {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
-+ (NSString*)entityName;
++ (id)insertObjectInContext:(NSManagedObjectContext*)moc_;
++ (NSString*)nameOfEntity;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (<$managedObjectClassName$>ID*)objectID;
 
