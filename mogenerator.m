@@ -502,6 +502,23 @@ NSString  *gCustomBaseClassForced;
 }
 @end
 
+@implementation NSString (snakeCaseString)
+- (NSString*)snakeCaseString {
+    NSMutableString *output = [NSMutableString string];
+    NSCharacterSet *uppercase = [NSCharacterSet uppercaseLetterCharacterSet];
+    for (NSInteger idx = 0; idx < [self length]; idx += 1) {
+        unichar c = [self characterAtIndex:idx];
+        if ([uppercase characterIsMember:c]) {
+            [output appendFormat:@"_%@", [[NSString stringWithCharacters:&c length:1] lowercaseString]];
+        } else {
+            [output appendFormat:@"%C", c];
+        }
+    }
+    return output;
+}
+@end
+
+
 @interface MogeneratorTemplateDesc : NSObject {
     NSString *templateName;
     NSString *templatePath;

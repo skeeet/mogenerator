@@ -55,6 +55,10 @@
 - (NSString*)camelCaseString;
 @end
 
+@interface NSString (snakeCaseString)
+- (NSString*)snakeCaseString;
+@end
+
 @interface MOGeneratorApp : NSObject <DDCliApplicationDelegate> {
     NSString              *origModelBasePath;
     NSString              *tempGeneratedMomFilePath;
