@@ -1,0 +1,63 @@
+#import "<$managedObjectClassName$>.h"
+#import "<$managedObjectClassName$>Model.h"
+
+#pragma mark - model
+@interface <$managedObjectClassName$>Model ()
+
+// Private interface goes here.
+
+@end
+
+
+@implementation <$managedObjectClassName$>Model
+
+#pragma mark MTLJSONSerializing
+//+ (NSDictionary *)JSONKeyPathsByPropertyKey
+//{
+//    return [super JSONKeyPathsByPropertyKey];
+//}
+
+#pragma mark custom logic
+// Custom logic goes here.
+
+@end
+
+
+
+
+#pragma mark - core data backing class
+@interface <$managedObjectClassName$> ()
+
+// Private interface goes here.
+
+@end
+
+
+@implementation <$managedObjectClassName$>
+
+#pragma mark MTLManagedObjectSerializing
+
+//+ (NSString *)managedObjectEntityName
+//{
+//    return [super managedObjectEntityName];
+//}
+//
+//+ (NSDictionary *)managedObjectKeysByPropertyKey
+//{
+//    return [super managedObjectKeysByPropertyKey];
+//}
+//
+//+ (Class)classForDeserializingManagedObject:(NSManagedObject *)managedObject
+//{
+//    return [super classForDeserializingManagedObject:managedObject];
+//}
+//
+//+ (NSDictionary *)relationshipModelClassesByPropertyKey
+//{
+//    return [super relationshipModelClassesByPropertyKey];
+//}
+
+#pragma mark custom logic
+// Custom logic goes here.
+
+@end

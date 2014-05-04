@@ -466,6 +466,16 @@ NSString  *gCustomBaseClassForced;
     return NO;
 }
 
+- (NSString*)jsonMappingName {
+    NSString *result = result = [[self userInfo] objectForKey:@"json"];
+    if (!result) {
+        result = [self name].snakeCaseString;
+    }
+    return result;
+}
+
+
+
 @end
 
 @implementation NSRelationshipDescription (collectionClassName)

@@ -40,6 +40,7 @@
 - (NSString*)objectAttributeType;
 - (BOOL)hasTransformableAttributeType;
 - (BOOL)isReadonly;
+- (NSString*)jsonMappingName;
 @end
 
 @interface NSRelationshipDescription (collectionClassName)
