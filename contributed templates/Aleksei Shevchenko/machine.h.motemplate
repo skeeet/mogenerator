@@ -4,13 +4,9 @@
 <$if TemplateVar.modules$>@import CoreData;<$else$>#import <CoreData/CoreData.h><$endif$>
 <$if hasCustomSuperentity$><$if hasSuperentity$>#import "<$customSuperentity$>.h"
 <$else$><$if hasCustomBaseCaseImport$>#import <$baseClassImport$><$else$>#import "<$customSuperentity$>.h"<$endif$><$endif$><$endif$>
-
-#import <MTLJSONAdapter.h>
+#import <Mantle.h>
 <$if hasCustomSuperentity$><$if hasSuperentity$>#import "<$customSuperentity$>Model.h"
 <$else$><$if hasCustomBaseCaseImport$>#import <$baseClassImport$><$else$>#import "<$customSuperentity$>Model.h"<$endif$><$endif$><$endif$>
-
-
-
 
 
 
@@ -20,7 +16,7 @@
 <$endforeach do$>
 
 
-@interface _<$managedObjectClassName$> : <$if hasCustomSuperentity$><$if hasSuperentity$><$customSuperentity$>Model<$else$>MTLObject<$endif$><$else$>MTLObject<$endif$>    <MTLJSONSerializing>
+@interface _<$managedObjectClassName$>Model : <$if hasCustomSuperentity$><$if hasSuperentity$><$customSuperentity$>Model<$else$>MTLObject<$endif$><$else$>MTLModel<$endif$>    <MTLJSONSerializing>
 {
 }
 
@@ -95,7 +91,7 @@ extern const struct <$managedObjectClassName$>UserInfo {<$foreach UserInfo userI
 @interface <$managedObjectClassName$>ID : <$if hasSuperentity$><$customSuperentity$>ID<$else$>NSManagedObjectID<$endif$> {}
 @end
 
-@interface _<$managedObjectClassName$> : <$customSuperentity$> {}
+@interface _<$managedObjectClassName$> : <$customSuperentity$>  <MTLManagedObjectSerializing>{}
 + (id)insertObjectInContext:(NSManagedObjectContext*)moc_;
 + (NSString*)nameOfEntity;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -201,16 +197,6 @@ extern const struct <$managedObjectClassName$>UserInfo {<$foreach UserInfo userI
 - (void)setPrimitive<$Relationship.name.initialCapitalString$>:(<$Relationship.destinationEntity.managedObjectClassName$>*)value;
 <$endif$>
 <$endforeach do$>
-
-
-
-#pragma mark - MTLManagedObjectSerializing
-+ (NSString *)managedObjectEntityName
-+ (NSDictionary *)managedObjectKeysByPropertyKey
-
-+ (Class)classForDeserializingManagedObject:(NSManagedObject *)managedObject
-
-+ (NSDictionary *)relationshipModelClassesByPropertyKey
 
 
 @end

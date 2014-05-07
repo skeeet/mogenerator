@@ -1,5 +1,4 @@
 #import "<$managedObjectClassName$>.h"
-#import "<$managedObjectClassName$>Model.h"
 
 #pragma mark - model
 @interface <$managedObjectClassName$>Model ()

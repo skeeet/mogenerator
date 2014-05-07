@@ -1,7 +1,5 @@
 #import "_<$managedObjectClassName$>.h"
-#import "_<$managedObjectClassName$>Model.h"
-#import <MTLJSONAdapter.h>
-#import <MTLManagedObjectAdapter.h>
+#import <Mantle.h>
 
 #pragma mark - model
 @interface <$managedObjectClassName$>Model : _<$managedObjectClassName$>Model
@@ -10,13 +8,11 @@
 
 // Custom logic goes here.
 
-
 @end
 
 
 #pragma mark - core data backing class
 
-@interface MTLManagedObjectAdapter;
 
 @interface <$managedObjectClassName$> : _<$managedObjectClassName$> <MTLManagedObjectSerializing>
 {

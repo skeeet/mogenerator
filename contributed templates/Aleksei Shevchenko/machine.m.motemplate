@@ -2,8 +2,6 @@
 // Make changes to <$managedObjectClassName$>.m instead.
 
 #import "_<$managedObjectClassName$>.h"
-#import "_<$managedObjectClassName$>Model.h"
-
 
 #pragma mark - model
 @implementation _<$managedObjectClassName$>Model
@@ -72,10 +70,7 @@ const struct <$managedObjectClassName$>UserInfo <$managedObjectClassName$>UserIn
                //relationships
                <$foreach Relationship noninheritedRelationships do$>
                @"<$Relationship.name$>" : @"<$Relationship.name$>",<$endforeach do$>
-               };
             };
-    
-    return ret;
 }
 
 
