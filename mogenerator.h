@@ -41,6 +41,7 @@
 - (BOOL)hasTransformableAttributeType;
 - (BOOL)isReadonly;
 - (NSString*)jsonMappingName;
+- (BOOL)isDate;
 @end
 
 @interface NSRelationshipDescription (collectionClassName)

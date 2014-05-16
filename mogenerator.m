@@ -473,7 +473,9 @@ NSString  *gCustomBaseClassForced;
     }
     return result;
 }
-
+- (BOOL)isDate {
+    return  self.attributeType==NSDateAttributeType;
+}
 
 
 @end
