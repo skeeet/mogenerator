@@ -26,6 +26,14 @@
 - (NSString*)forcedCustomBaseClass;
 - (void)_processPredicate:(NSPredicate*)predicate_ bindings:(NSMutableArray*)bindings_;
 - (NSArray*)prettyFetchRequests;
+
+
+- (NSString*)jsonKeypaths;      // keypaths
+- (BOOL) hasJsonKeypaths;
+
+- (NSString*)primaryKey;        //pk
+- (BOOL) hasPrimaryKey;
+
 @end
 
 @interface NSAttributeDescription (typing)
@@ -40,7 +48,7 @@
 - (NSString*)objectAttributeType;
 - (BOOL)hasTransformableAttributeType;
 - (BOOL)isReadonly;
-- (NSString*)jsonMappingName;
+- (NSString*)jsonMappingName;   // json
 - (BOOL)isDate;
 @end
 

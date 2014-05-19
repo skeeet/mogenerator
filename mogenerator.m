@@ -332,6 +332,37 @@ static NSString * const kNSValueTransformerDirectionReverse = @"kNSValueTransfor
     }
     return result;
 }
+
+- (NSArray*)jsonKeypaths
+{
+    NSString *result = [[self userInfo] objectForKey:@"keypaths"];
+    if(!result) return @[];
+    NSCharacterSet *removeCharSet = [NSCharacterSet characterSetWithCharactersInString:@", "];
+    NSMutableArray *keypaths = [result componentsSeparatedByCharactersInSet:removeCharSet].mutableCopy;
+    [keypaths removeObject:@""];
+    return keypaths;
+}
+
+- (BOOL) hasJsonKeypaths
+{
+    NSString *result = [[self userInfo] objectForKey:@"keypaths"];
+    return result != nil;
+}
+
+
+
+- (NSString*)primaryKey
+{
+    return [[self userInfo] objectForKey:@"pk"];
+}
+
+- (BOOL) hasPrimaryKey
+{
+    NSString *result = [[self userInfo] objectForKey:@"pk"];
+    return result != nil;
+}
+
+
 @end
 
 @implementation NSAttributeDescription (typing)
@@ -481,6 +512,7 @@ static NSString * const kNSValueTransformerDirectionReverse = @"kNSValueTransfor
     }
     return result;
 }
+
 - (BOOL)isDate {
     return  self.attributeType==NSDateAttributeType;
 }
