@@ -48,6 +48,7 @@
 - (NSString*)mutableCollectionClassName;
 - (NSString*)immutableCollectionClassName;
 - (BOOL)jr_isOrdered;
+- (NSString*) jsonTransformerDirection;
 @end
 @interface NSObject (JustHereToSuppressIsOrderedNotImplementedCompilerWarning)
 - (BOOL)isOrdered;

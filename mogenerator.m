@@ -11,6 +11,14 @@ NSString  *gCustomBaseClass;
 NSString  *gCustomBaseClassImport;
 NSString  *gCustomBaseClassForced;
 
+//added by Alex Shevchenko
+static NSString * const kNSValueTransformerDirection        = @"kNSValueTransformerDirection";
+static NSString * const kNSValueTransformerDirectionBoth    = @"kNSValueTransformerDirectionBoth";
+static NSString * const kNSValueTransformerDirectionForward = @"kNSValueTransformerDirectionForward";
+static NSString * const kNSValueTransformerDirectionReverse = @"kNSValueTransformerDirectionReverse";
+
+
+
 @interface NSEntityDescription (fetchedPropertiesAdditions)
 - (NSDictionary*)fetchedPropertiesByName;
 @end
@@ -497,6 +505,14 @@ NSString  *gCustomBaseClassForced;
         return NO;
     }
 }
+
+
+- (NSString*) jsonTransformerDirection {
+    NSString * direction = [[self userInfo] objectForKey:kNSValueTransformerDirection];
+    if(!direction) return kNSValueTransformerDirectionBoth;
+    return direction;
+}
+
 
 @end
 
